@@ -106,7 +106,7 @@
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 import axios from 'axios'
-
+import url from '@/serviceAPI.config'
 import { toMoney } from '@/filter/moneyFilter.js'
 import goodsInfo from '../component/goodsInfoComponent'
 import 'swiper/dist/css/swiper.css'
@@ -173,7 +173,7 @@ export default {
   created() {
     this.loadingShow = true,
       axios({
-        url: 'https://www.easy-mock.com/mock/5c7006fba0b64b7d17824c17/SmileVue/index',
+        url: url.getShoppingMallInfo,
         method: 'get',
       }).then(response => {
         this.category = response.data.data.category;
